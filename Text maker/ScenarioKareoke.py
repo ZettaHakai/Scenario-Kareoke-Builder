@@ -1,6 +1,6 @@
 # Python 3.x
 
-def generate_sliding_arrays_close_only(base_line_str, start_id=0x1500,
+def generate_sliding_arrays_close_only(base_line_str, start_id=0x000,
                                        emphasis="CTR_EM_YELLOW",
                                        close="CTR_CLOSE_EM"):
     arrays = {}
@@ -44,7 +44,7 @@ def write_arrays_to_file(arrays, filename="scenario_arrays.c"):
     with open(filename, "w") as f:
         for name, content in arrays.items():
             line_str = ", ".join(content)
-            f.write(f"static s16 {name}[] = {{ {line_str} }};\n\n")
+            f.write(f"static s16 {name}[] = {{ {line_str} }};\n")
     print(f"Written {len(arrays)} arrays to {filename}")
 
 
@@ -52,9 +52,16 @@ def write_arrays_to_file(arrays, filename="scenario_arrays.c"):
 
 base_line = """
 
-PCT_SPACE,CHR_A,CHR_a,PCT_COMMA,PCT_SPACE,CHR_I,CHR_M,CHR_P,CHR_A,CHR_C,CHR_T,PCT_EXCLAMATION,CTR_ENDLINE
 
+    PCT_SPACE,PCT_SPACE,PCT_SPACE,PCT_SPACE,PCT_SPACE,PCT_SPACE,
+    CHR_G,CHR_o,CHR_i,CHR_n,CHR_g,
+    PCT_SPACE,
+    CHR_n,CHR_o,CHR_w,
+    CTR_ENDLINE
+   
+   
+   
 """
 
-arrays = generate_sliding_arrays_close_only(base_line, start_id=0x1500)
+arrays = generate_sliding_arrays_close_only(base_line, start_id=0x1600)
 write_arrays_to_file(arrays, filename="scenario_arrays.c")
