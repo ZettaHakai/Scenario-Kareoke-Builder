@@ -83,6 +83,11 @@ this usually repeats for every letter of every word. 18 words can become 320 sce
 It will approximate the timings from the first file, and apply them to your default file. Really, only useful if you want to convert your original timings approximately, or manually adjust from a default speed. 
 
 It dumps the text into  scenario_adjusted.c 
+
+Labeler notes
+
+It labels your scenario windows with //x x being a letter. Input your karaoke text top, your windows bottom, all in input.c: basically your entire window and text structure, it prints notes in your windows to tell you what letter was last turned yellow in the output folder. Labels Both your text, and your windows. 
+
 ---------------------------------------------------------------------------
 Useful for a niche, Scenario. haha. hahaha.
 ~zetta
